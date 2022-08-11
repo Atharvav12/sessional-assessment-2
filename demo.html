@@ -11,8 +11,8 @@
 </head>
 <body>
     <nav class = "navbar navbar-expand-lg clr">
-        &nbsp; &nbsp; &nbsp; &nbsp;
-        <a class = "navbar-brand" href="">Mesh</a>
+        &nbsp; &nbsp; 
+        <a class = "navbar-brand title" href=""><b>SoftWeb</b></a>
         &nbsp; &nbsp;
         <img src="https://edps.europa.eu/sites/default/files/picture/pims2.png" height="90px">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,15 +21,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
        
      
-        <ul class = "navbar-nav ms-auto">
+        <ul class = "navbar-nav ms-auto title">
             <li class = "nav-item pad">
-                <a class = "nav-link" href="">Blog</a>
+                <a class = "nav-link" href="">Home</a>
             </li>
             <li class = "nav-item pad">
                 <a class = "nav-link" href="">Form</a>
             </li>
             <li class = "nav-item pad">
-                <a class = "nav-link" href="">Download</a>
+                <a class = "nav-link" onclick="httpreq()">Check</a>
+            </li>
+            <li class = "nav-item pad">
+                <a class = "nav-link" href="">Footer</a>
             </li>
         </ul>
         </div>
@@ -37,16 +40,18 @@
     <div id="d2">
 
     </div>
-    <button onclick="httpreq()">Atharva</button>
+    <!-- <br>
+    <button class ="btn1" onclick="httpreq()">Click for detils</button>-->
+    <br><br> 
     <div class="contact">
-        <h3>Please send me an email </h3>
+        <h3 align="center">Add your details</h3>
         <form>
             <p>
-                <label>First Name</label>
+                <label>Full Name</label>
                 <input type="text" name="name">
             </p>
             <p>
-                <label>Last Name</label>
+                <label>Username</label>
                 <input type="text" name="company">
             </p>
             <p>
@@ -55,6 +60,22 @@
             </p>
             <p>
                 <label>Phone Number</label>
+                <input type="text" name="phone">
+            </p>
+            <p>
+                <label>Address</label>
+                <input type="text" name="phone">
+            </p>
+            <p>
+                <label>Zipcode</label>
+                <input type="text" name="phone">
+            </p>
+            <p>
+                <label>Company's Name</label>
+                <input type="text" name="phone">
+            </p>
+            <p>
+                <label>Website</label>
                 <input type="text" name="phone">
             </p>
             <p class="full">
@@ -113,7 +134,7 @@
                 <span class="mediaLinksIcons twit">
                   <i class="fab fa-twitter-square"></i>
                 </span>
-                <a class="twit" href="https://twitter.com/Atharva74458532">&nbsp;Twitter</a>
+                <a class="twit" href="https://twitter.com/home">&nbsp;Twitter</a>
               </li>
               <li class="media3"  title="Instagram">
                 <span class="mediaLinksIcons insta">
@@ -147,18 +168,60 @@
                                                        var data=this.responseText;
                                                        var obj=JSON.parse(data);
                                                        for(var i=0;i<obj.length;i++){
-                                                                  var node=document.createElement("h1");
-                                                                  node.innerHTML=obj[i].id;
+
+                                                                  var node=document.createElement("div");
                                                                   node.innerHTML+="<br>";
+                                                                  node.innerHTML+="Person ";
+                                                                  node.innerHTML+=obj[i].id;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="Name : ";
                                                                   node.innerHTML+=obj[i].name;
                                                                   node.innerHTML+="<br>";
+                                                                  node.innerHTML+="username : ";
                                                                   node.innerHTML+=obj[i].username;
                                                                   node.innerHTML+="<br>";
+                                                                  node.innerHTML+="email : ";
+                                                                  node.innerHTML+=obj[i].email;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="Street : ";
                                                                   node.innerHTML+=obj[i].address.street;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="suite : ";
+                                                                  node.innerHTML+=obj[i].address.suite;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="city : ";
                                                                   node.innerHTML+=obj[i].address.city;
                                                                   node.innerHTML+="<br>";
-                                                                  node.innerHTML+=obj[i].email;
+                                                                  node.innerHTML+="zipcode : ";
+                                                                  node.innerHTML+=obj[i].address.zipcode;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="latitude : ";
+                                                                  node.innerHTML+=obj[i].address.geo.lat;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="longitude : ";
+                                                                  node.innerHTML+=obj[i].address.geo.lng;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="phone : ";
+                                                                  node.innerHTML+=obj[i].phone;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="website : ";
+                                                                  node.innerHTML+=obj[i].website;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="company's name : "
+                                                                  node.innerHTML+=obj[i].company.name;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="company's catchphrase : ";
+                                                                  node.innerHTML+=obj[i].company.catchPhrase;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="company's bs : ";
+                                                                  node.innerHTML+=obj[i].company.bs;
+                                                                  node.innerHTML+="<br>";
+                                                                  node.innerHTML+="<br>";
                                                                   c.appendChild(node);
+                                                                
+                                                                  
+                                                            
+                        
                                                        }
                                                       
                                             }}
