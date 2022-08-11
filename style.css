@@ -1,6 +1,10 @@
 .clr{
     background: darkorange;
 }
+.i2{
+    background-color: rgb(223, 198, 167);
+    height: 500px;
+}
 .title{
     color: rgba(0,0,0,0.9)e;
 }
